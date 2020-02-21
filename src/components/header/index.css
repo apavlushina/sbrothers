@@ -1,0 +1,28 @@
+.main-header {
+  display: flex;
+  margin: 0 auto;
+  min-height: 250px;
+  max-width: 1024px;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(./images/background.png);
+  background-position: center 17%;
+}
+
+.main-logo {
+  width: 288px;
+  height: 68px;
+  margin: auto;
+}
+
+@media (max-width: 500px) {
+  .main-header {
+    min-height: 125px;
+    max-width: 512px;
+  }
+
+  .main-logo {
+    width: 192px;
+    height: 45px;
+  }
+}
