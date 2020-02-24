@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getPosts, createPost } from "../../actions/posts";
+import PostsList from "./PostsList";
+import AddPost from "./AddPost";
 import "./index.css";
 
 class MainContainer extends React.PureComponent {
@@ -8,17 +10,19 @@ class MainContainer extends React.PureComponent {
 
   componentDidMount() {
     this.props.getPosts();
+    console.log("cdm?", this.props);
   }
 
   render() {
     if (!this.props.posts) {
+      console.log("props", this.props.posts);
       return <p>Loading...</p>;
     } else {
+      console.log("props", this.props.posts);
       return (
         <div>
-          Test
-          {/* <AddPost createPost={this.props.createPost} />
-          <PostsList albums={this.props.posts} /> */}
+          {/* <AddPost createPost={this.props.createPost} /> */}
+          <PostsList posts={this.props.posts} />
         </div>
       );
     }
@@ -27,7 +31,7 @@ class MainContainer extends React.PureComponent {
 
 const mapStateToProps = state => {
   return {
-    posts: state.props
+    posts: state.posts
   };
 };
 
