@@ -15,15 +15,23 @@ export default function PostsList(props) {
 
   return (
     <div className="list-container">
-      <ul>
+      <ul className="post-container">
         {props.posts.slice(0, count).map(post => {
           return (
-            <li key={post.id}>
-              <img src={post.img_url} alt={post.title}></img>
-              <p>{post.category && post.category.name}</p>
-              <p>{formatDate(new Date(post.created_at))}</p>
-              <h2>{post.title}</h2>
-              <p>{post.content}</p>
+            <li key={post.id} className="post">
+              <img
+                src={post.img_url}
+                alt={post.title}
+                className="post-image"
+              ></img>
+              <p className="post-image_data">
+                {post.category && post.category.name}{" "}
+              </p>
+              <p className="post-image_data">
+                {formatDate(new Date(post.created_at))}{" "}
+              </p>
+              <h2 className="post-title">{post.title}</h2>
+              <p className="post-content">{post.content}</p>
             </li>
           );
         })}
