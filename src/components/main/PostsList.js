@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 export default function PostsList(props) {
+  const [count, loadMore] = useState(4);
+
   const formatDate = date => {
     let newDate = [];
     newDate = [
@@ -14,7 +16,7 @@ export default function PostsList(props) {
   return (
     <div>
       <ul>
-        {props.posts.map(post => {
+        {props.posts.slice(0, count).map(post => {
           return (
             <li key={post.id}>
               <img src={post.img_url} alt={post.title}></img>
@@ -26,6 +28,11 @@ export default function PostsList(props) {
           );
         })}
       </ul>
+      {count < props.posts.length && (
+        <button onClick={() => loadMore(count + 4)} type="button">
+          Load more posts
+        </button>
+      )}
     </div>
   );
 }
