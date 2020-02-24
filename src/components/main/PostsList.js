@@ -24,12 +24,10 @@ export default function PostsList(props) {
                 alt={post.title}
                 className="post-image"
               ></img>
-              <p className="post-image_data">
-                {post.category && post.category.name}{" "}
-              </p>
-              <p className="post-image_data">
-                {formatDate(new Date(post.created_at))}{" "}
-              </p>
+              <div className="post-image_data">
+                <p>{formatDate(new Date(post.created_at))} </p>
+                <p>{post.category && post.category.name} </p>
+              </div>
               <h2 className="post-title">{post.title}</h2>
               <p className="post-content">{post.content}</p>
             </li>
