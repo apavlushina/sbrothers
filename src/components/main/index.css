@@ -1,0 +1,22 @@
+.main-container {
+  margin: 20px auto;
+  width: 920px;
+  display: flex;
+}
+
+.list-container {
+  background-color: white;
+  width: 47%;
+  margin: 10px;
+}
+
+.button {
+  margin: 35px auto;
+  width: 192px;
+  height: 31px;
+  color: white;
+  font-weight: bold;
+  background-color: #f27623;
+  border-radius: 18px;
+  border: 1px solid #e95e30;
+}

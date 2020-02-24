@@ -20,8 +20,8 @@ class MainContainer extends React.PureComponent {
     } else {
       console.log("props", this.props.posts);
       return (
-        <div>
-          {/* <AddPost createPost={this.props.createPost} /> */}
+        <div className="main-container">
+          <AddPost createPost={this.props.createPost} />
           <PostsList posts={this.props.posts} />
         </div>
       );

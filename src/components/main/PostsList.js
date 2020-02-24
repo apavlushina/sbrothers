@@ -14,7 +14,7 @@ export default function PostsList(props) {
   };
 
   return (
-    <div>
+    <div className="list-container">
       <ul>
         {props.posts.slice(0, count).map(post => {
           return (
@@ -29,7 +29,11 @@ export default function PostsList(props) {
         })}
       </ul>
       {count < props.posts.length && (
-        <button onClick={() => loadMore(count + 4)} type="button">
+        <button
+          onClick={() => loadMore(count + 4)}
+          type="button"
+          className="button"
+        >
           Load more posts
         </button>
       )}
