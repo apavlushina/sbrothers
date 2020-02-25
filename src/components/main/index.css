@@ -45,12 +45,20 @@ label {
   outline: none;
 }
 
+.form-input:focus {
+  border: 1px solid #f27623;
+}
+
 input::-webkit-input-placeholder {
   color: rgba(197, 197, 197, 0.7);
 }
 
 select:invalid {
   color: rgba(197, 197, 197, 0.7);
+}
+
+select:focus {
+  border: 1px solid #f27623;
 }
 
 .arrowParent {
@@ -83,6 +91,9 @@ textarea {
   outline: none;
 }
 
+textarea:focus {
+  border: 1px solid #f27623;
+}
 /* styles to see all posts */
 
 .post-container {
