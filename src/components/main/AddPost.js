@@ -3,9 +3,9 @@ import arrow from "./images/arrow.png";
 
 export default class AddPost extends React.Component {
   state = {
-    title: null,
-    content: null,
-    category: null
+    title: "",
+    content: "",
+    category: ""
   };
 
   handleSubmit = event => {
@@ -15,9 +15,9 @@ export default class AddPost extends React.Component {
         categorie => categorie.name === this.state.category
       ).id;
       const postData = {
-        title: this.state.title,
-        content: this.state.content,
-        category_id: category_id
+        title: this.state.title.toString(),
+        content: this.state.content.toString(),
+        category_id: Number(category_id)
       };
       this.props.createPost(postData);
     }
@@ -28,7 +28,6 @@ export default class AddPost extends React.Component {
   };
 
   render() {
-    console.log("state", this.state);
     return (
       <div className="list-container">
         <form onSubmit={this.handleSubmit} className="form">

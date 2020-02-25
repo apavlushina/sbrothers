@@ -18,9 +18,7 @@ export const getCategories = () => (dispatch, getState) => {
     request(`http://178.62.198.162/api/categories`)
       .set("token", `${auth}`)
       .then(response => {
-        console.log("response", response);
         const action = allCategories(response.body);
-
         dispatch(action);
       })
       .catch(console.error);

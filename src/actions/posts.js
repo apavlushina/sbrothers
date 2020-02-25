@@ -38,7 +38,6 @@ function addPost(payload) {
 }
 
 export const createPost = data => dispatch => {
-  console.log("data to send", data);
   request
     .post(`${baseUrl}`)
     .set("token", `${auth}`)
