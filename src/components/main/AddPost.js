@@ -1,12 +1,25 @@
 import React from "react";
+import arrow from "./images/arrow.png";
 
 export default class AddPost extends React.Component {
-  state = {};
+  state = {
+    title: null,
+    content: null,
+    category: null
+  };
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.title) {
-      this.props.createAlbum(this.state.title);
+    if (this.state.category) {
+      const category_id = this.props.categories.find(
+        categorie => categorie.name === this.state.category
+      ).id;
+      const postData = {
+        title: this.state.title,
+        content: this.state.content,
+        category_id: category_id
+      };
+      this.props.createPost(postData);
     }
   };
 
@@ -15,6 +28,7 @@ export default class AddPost extends React.Component {
   };
 
   render() {
+    console.log("state", this.state);
     return (
       <div className="list-container">
         <form onSubmit={this.handleSubmit} className="form">
@@ -24,31 +38,32 @@ export default class AddPost extends React.Component {
               <br />
               <input
                 type="text"
-                name="berichtnaam"
+                name="title"
                 className="form-input"
                 placeholder="Geen titel"
-                value={this.state.berichtnaam}
+                value={this.state.title}
                 onChange={this.handleChange}
                 required
               />
             </label>
-            <label className="label">
+            <label className="label arrowParent">
               Categorie:
               <br />
+              <img src={arrow} alt="arrow" className="arrow"></img>
               <select
                 type="text"
-                name="categorie"
-                className="form-input form-select"
-                value={this.state.categorie}
+                name="category"
+                className="form-input"
+                value={this.state.category}
                 onChange={this.handleChange}
                 required
               >
-                <option value="" selected>
+                <option value="" defaultValue>
                   Geen categorie
                 </option>
-                <option>Tech</option>
-                <option>Sports</option>
-                <option>Nieuws</option>
+                {this.props.categories.map(categorie => {
+                  return <option key={categorie.id}>{categorie.name}</option>;
+                })}
               </select>
             </label>
             <label className="label">
@@ -56,8 +71,8 @@ export default class AddPost extends React.Component {
               <br />
               <textarea
                 maxLength="300"
-                name="bericht"
-                value={this.state.bericht}
+                name="content"
+                value={this.state.content}
                 onChange={this.handleChange}
                 required
               ></textarea>

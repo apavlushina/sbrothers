@@ -41,6 +41,8 @@ label {
   padding-left: 20px;
   box-sizing: border-box;
   color: #404040;
+  appearance: none;
+  outline: none;
 }
 
 input::-webkit-input-placeholder {
@@ -51,12 +53,16 @@ select:invalid {
   color: rgba(197, 197, 197, 0.7);
 }
 
-.form-select {
-  height: 50px;
-  margin-top: 5px;
-  appearance: none;
-  background-color: #fafafa;
-  background-image: url("./images/arrow.png") no-repeat 20px center;
+.arrowParent {
+  position: relative;
+}
+
+.arrow {
+  width: 12px;
+  height: 7px;
+  position: absolute;
+  top: 47px;
+  left: 375px;
 }
 
 option {
@@ -74,6 +80,7 @@ textarea {
   font-size: 12px;
   padding: 20px;
   box-sizing: border-box;
+  outline: none;
 }
 
 /* styles to see all posts */

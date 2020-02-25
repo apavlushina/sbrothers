@@ -20,7 +20,6 @@ export const getPosts = () => (dispatch, getState) => {
     request(`${baseUrl}`)
       .set("token", `${auth}`)
       .then(response => {
-        console.log("response", response);
         const action = allPosts(response.body);
 
         dispatch(action);
@@ -38,17 +37,14 @@ function addPost(payload) {
   };
 }
 
-export const createPost = data => (dispatch, getState) => {
-  const state = getState();
-  const auth = "../auth.js";
-
+export const createPost = data => dispatch => {
+  console.log("data to send", data);
   request
     .post(`${baseUrl}`)
     .set("token", `${auth}`)
     .send(data)
     .then(response => {
       const action = addPost(response.body);
-
       dispatch(action);
     })
     .catch(console.error);
