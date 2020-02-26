@@ -1,5 +1,6 @@
 import request from "superagent";
-import { auth } from "../auth.js";
+// import { auth } from "../auth.js";
+const auth = process.env.REACT_APP_AUTH;
 
 export const ALL_CATEGORIES = "ALL_CATEGORIES";
 

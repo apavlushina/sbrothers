@@ -1,6 +1,6 @@
 .main-container {
   margin: 20px auto;
-  width: 960px;
+  max-width: 960px;
   display: flex;
 }
 
@@ -10,6 +10,22 @@
   margin: 10px;
 }
 
+@media (max-width: 660px) {
+  .main-container {
+    flex-direction: column-reverse;
+  }
+
+  .list-container {
+    max-width: 400px;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 440px) {
+  .list-container {
+    width: 320px;
+  }
+}
 /* styles to add new post */
 
 .form {
@@ -33,6 +49,7 @@ label {
 .form-input {
   margin: 10px auto;
   width: 406px;
+  max-width: 100%;
   height: 50px;
   border: none;
   background-color: #fafafa;
@@ -51,6 +68,10 @@ label {
 
 input::-webkit-input-placeholder {
   color: rgba(197, 197, 197, 0.7);
+}
+
+select {
+  max-width: 100%;
 }
 
 select:invalid {
@@ -81,6 +102,7 @@ textarea {
   margin-top: 5px;
   margin-bottom: 10px;
   width: 406px;
+  max-width: 100%;
   height: 560px;
   border: none;
   background-color: #fafafa;
@@ -94,6 +116,22 @@ textarea {
 textarea:focus {
   border: 1px solid #f27623;
 }
+
+@media (max-width: 660px) {
+  textarea {
+    height: 300px;
+  }
+
+  .form {
+    width: 300px;
+  }
+
+  .arrow {
+    top: 47px;
+    left: 275px;
+  }
+}
+
 /* styles to see all posts */
 
 .post-container {
@@ -158,6 +196,16 @@ textarea:focus {
   line-height: 19px;
 }
 
+@media (max-width: 950px) {
+  .post-container {
+    flex-direction: column;
+  }
+
+  .post {
+    align-self: center;
+  }
+}
+
 .button {
   margin: 10px auto 35px;
   height: 31px;
@@ -168,8 +216,4 @@ textarea:focus {
   border-radius: 18px;
   border: 1px solid #e95e30;
   outline: none;
-}
-
-.form .button {
-  text-align: center;
 }

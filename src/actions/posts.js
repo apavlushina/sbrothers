@@ -1,6 +1,6 @@
 import request from "superagent";
-import { auth } from "../auth.js";
-
+// import { auth } from "../auth.js";
+const auth = process.env.REACT_APP_AUTH;
 const baseUrl = "http://178.62.198.162/api/posts";
 
 export const ALL_POSTS = "ALL_POSTS";
@@ -17,8 +17,9 @@ export const getPosts = () => (dispatch, getState) => {
   const { posts } = state;
 
   if (!posts.length) {
+    console.log("token", auth);
     request(`${baseUrl}`)
-      .set("token", `${auth}`)
+      .set("token", auth)
       .then(response => {
         const action = allPosts(response.body);
 
