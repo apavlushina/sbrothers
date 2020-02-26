@@ -1,6 +1,7 @@
 ### README
 
-This test assignment was built with React and deployed to [Heroku](http://secure-citadel-62833.herokuapp.com/) (please wait a minute when open the link - it have to wake up :)
+This assignment was built with React and deployed to [Heroku](http://secure-citadel-62833.herokuapp.com/) <br/>
+(please wait a minute when open the link - it have to wake up :)
 
 ## Table of contents:
 
@@ -11,15 +12,16 @@ This test assignment was built with React and deployed to [Heroku](http://secure
 
 ## Technologies used
 
-1. React with `create-react-app`
-2. `redux`, `react-redux` and `redux-thunk` to set up a redux store and dispatch actions
-3. `superagent` to fetch data from the database
+- React with `create-react-app`
+- `redux`, `react-redux` and `redux-thunk` to set up a redux store and dispatch actions
+- `superagent` to fetch data from the database
 
 ## Things to be improved
 
-- I prefer to build an app with "mobile-first" approach, but in that case I started with desktop (as it was the only provided desine)
+- I prefer to build an app with "mobile-first" approach, <br/>
+  but in that case I started with desktop (as it was the only provided design)
 - API is available only with http, better to change it to https
-- Ctyles were implemented very close, but not pixel-perfect
+- Styles were implemented very close, but not pixel-perfect
 
 ## Getting Started
 
