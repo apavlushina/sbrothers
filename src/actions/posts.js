@@ -17,7 +17,6 @@ export const getPosts = () => (dispatch, getState) => {
   const { posts } = state;
 
   if (!posts.length) {
-    console.log("token", auth);
     request(`${baseUrl}`)
       .set("token", auth)
       .then(response => {
