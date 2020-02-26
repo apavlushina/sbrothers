@@ -1,3 +1,5 @@
+## Test Assignment
+
 This assignment was built with React and redux and deployed to [Heroku](http://secure-citadel-62833.herokuapp.com/) <br/>
 (please wait a minute when open the link - it has to wake up :)
 
@@ -5,8 +7,8 @@ This assignment was built with React and redux and deployed to [Heroku](http://s
 
 - I prefer to build an app with "mobile-first" approach, <br/>
   but in that case I started with desktop (as it was the only provided design)
-- API is available only with http, better to change it to https
-- Styles were implemented very close, but not pixel-perfect
+- API is available only with http, to get higher score in lighthose and provide more security is better to change it to https
+- Styles can be improved (using SASS, BEM and pixel-perfect)
 
 ### Getting Started
 
@@ -14,7 +16,7 @@ Step-by-step instructions to get you up and running!
 
 #### Clone the repo
 
-Clone the repo to your local machine using the following SSH Link:
+Clone the repo to your local machine: <br/>
 `git@github.com:apavlushina/sbrothers.git`
 
 #### Install required dependencies
